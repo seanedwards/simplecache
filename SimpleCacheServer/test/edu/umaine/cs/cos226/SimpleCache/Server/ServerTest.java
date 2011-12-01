@@ -42,10 +42,10 @@ public class ServerTest {
     
     @Before
     public void setUp() {
-        nodes = new ThreadNode[] {null, null, null, null, null};
-        servers = new CacheServer[] {null, null, null, null, null};
+        nodes = new ThreadNode[] {null, null};
+        servers = new CacheServer[] {null, null};
         try {
-            for (int x = 0; x < 5; ++x)
+            for (int x = 0; x < 2; ++x)
             {
                 nodes[x] = new ThreadNode(new InetSocketAddress("127.0.0.1", 1231 + x));
                 nodes[x].start();
@@ -115,6 +115,7 @@ public class ServerTest {
                     Assert.assertEquals(s.toUpperCase(), v);
                 }
             });
+            Thread.sleep(100);
             conn.poll();
             conn.delete(s);
         }

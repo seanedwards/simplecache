@@ -34,9 +34,9 @@ public abstract class Packet {
     public static Packet readPacket(DataInputStream r) throws IOException
     {
         int ptype = (int)r.readByte();
-        if (ptype >= Type.values().length)
+        if (ptype >= Type.values().length || ptype < 0)
             throw new IOException("Invalid packet type received.");
-        
+
         Type t = Type.values()[ptype];
         Packet ret = null;
         switch (t)

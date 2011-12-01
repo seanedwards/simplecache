@@ -27,7 +27,7 @@ libs = $(rootdir)/lib/junit-4.10.jar:$(rootdir)/lib/commons-cli-1.2.jar:$(rootdi
 # Where the source files and libraries are
 CLASSPATH = $(libs):$(outdir)
 
-tests = edu.umaine.cs.cos226.ServerTest
+tests = edu.umaine.cs.cos226.SimpleCache.Server.ServerTest
 outdir=./out
 # List of source files
 sourcelist = $(shell find $(rootdir) -name '*.java' | sed "s,[.]/,,g")
