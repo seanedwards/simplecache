@@ -42,10 +42,10 @@ public class ServerTest {
     
     @Before
     public void setUp() {
-        nodes = new ThreadNode[] {null, null};
-        servers = new CacheServer[] {null, null};
+        nodes = new ThreadNode[] {null, null, null, null, null};
+        servers = new CacheServer[] {null, null, null, null, null};
         try {
-            for (int x = 0; x < 2; ++x)
+            for (int x = 0; x < 5; ++x)
             {
                 nodes[x] = new ThreadNode(new InetSocketAddress("127.0.0.1", 1231 + x));
                 nodes[x].start();
